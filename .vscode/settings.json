@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/3cb97746-c917-4ed7-8695-5d98161fccae/resourceGroups/MaSHReportingDev/providers/Microsoft.Web/sites/smcsgenaiapp",
+    "appService.deploySubpath": "."
+}

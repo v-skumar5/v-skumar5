@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Management Powered By AI</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+        }
+
+        nav {
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin-right: 20px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        pre {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 14px;
+            max-width: 100%; /* Ensure the pre element does not overflow the container */
+            overflow-x: auto; /* Add horizontal scroll if needed */
+        }
+
+        .redirect-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .redirect-message {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .redirect-link {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #4caf50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .redirect-link:hover {
+            text-decoration: underline;
+        }
+
+        .image-container-left,
+        .image-container-right {
+            position: absolute;
+            top: 10px;
+        }
+
+        .image-container-left {
+            left: 10px;
+        }
+
+        .image-container-right {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-container-left">
+        <img src="{{ url_for('static', filename='Microsoft.png') }}" alt="Microsoft Logo" width="150">
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <h1>Here are a few suggestions for your query >>> </h1>
+    <p> <font color="blue"> {{query}} </font></p>
+    {% if result %}
+    <pre>{{ result | safe }}</pre>
+    {% endif %}
+
+    <div class="redirect-container">
+        <p class="redirect-message">Information sought not found. Click <a href="https://portal.microsofticm.com/"
+                class="redirect-link">here</a> to create a ticket.</p>
+    </div>
+</body>
+
+</html>
