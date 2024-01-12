@@ -1,8 +1,0 @@
-Flask
-openai
-pandas
-numpy
-azure-storage-file-datalake
-pyarrow
-azure-identity
-azure-keyvault-secrets
